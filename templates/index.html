@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Mobility | Intelligence Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🚦 SmartMobility
+        </div>
+
+        <nav>
+            <a href="#overview" class="active">⌂ &nbsp; Overview</a>
+            <a href="#predictions">📈 &nbsp; Predictions</a>
+            <a href="#allocation">🚦 &nbsp; Capacity Analysis</a>
+            <a href="#recommendations">💡 &nbsp; Recommendations</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>AI-Powered Transportation</p>
+            <small>Smart Mobility System v1.0</small>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Smart Mobility Dashboard</h1>
+                <p>Demand Forecasting & Capacity Allocation</p>
+            </div>
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span id="systemStatus">Connecting...</span>
+            </div>
+
+        </header>
+
+        <!-- OVERVIEW -->
+
+        <section id="overview" class="welcome-section">
+
+            <div>
+                <span class="eyebrow">TRANSPORTATION INTELLIGENCE</span>
+
+                <h2>Smarter Cities Through AI</h2>
+
+                <p>
+                    Intelligent transportation demand forecasting
+                    and resource allocation powered by four
+                    machine learning models.
+                </p>
+
+                <span class="demo-label">
+                    Historical Demonstration Mode
+                </span>
+            </div>
+
+            <div class="welcome-icon">🌆</div>
+
+        </section>
+
+        <!-- PREDICTIONS -->
+
+        <section id="predictions">
+
+            <div class="section-heading">
+                <h2>Transportation Predictions</h2>
+                <span class="section-tag">4 ML Models</span>
+            </div>
+
+            <div class="prediction-grid">
+
+                <div class="card blue-card">
+
+                    <div class="card-header">
+                        <span class="icon">🚲</span>
+                        <span class="badge">BICYCLE</span>
+                    </div>
+
+                    <h3>Bicycle Rental Demand</h3>
+
+                    <div class="prediction-number"
+                         id="bicyclePrediction">--</div>
+
+                    <p class="unit">Expected rentals per hour</p>
+
+                    <div class="card-footer">
+                        <span id="bicycleStatus">Waiting for data</span>
+                    </div>
+
+                </div>
+
+                <div class="card purple-card">
+
+                    <div class="card-header">
+                        <span class="icon">🚗</span>
+                        <span class="badge">TRAFFIC</span>
+                    </div>
+
+                    <h3>Traffic Volume</h3>
+
+                    <div class="prediction-number"
+                         id="trafficPrediction">--</div>
+
+                    <p class="unit">Expected vehicles per hour</p>
+
+                    <div class="card-footer">
+                        <span id="trafficStatus">Waiting for data</span>
+                    </div>
+
+                </div>
+
+                <div class="card green-card">
+
+                    <div class="card-header">
+                        <span class="icon">🚇</span>
+                        <span class="badge">SUBWAY</span>
+                    </div>
+
+                    <h3>Subway Passenger Demand</h3>
+
+                    <div class="prediction-number"
+                         id="subwayPrediction">--</div>
+
+                    <p class="unit">Expected passengers per station-hour</p>
+
+                    <div class="card-footer">
+                        <span id="subwayStatus">Waiting for data</span>
+                    </div>
+
+                </div>
+
+                <div class="card orange-card">
+
+                    <div class="card-header">
+                        <span class="icon">🚴</span>
+                        <span class="badge">STATION</span>
+                    </div>
+
+                    <h3>Bike Station Availability</h3>
+
+                    <div class="prediction-number"
+                         id="stationPrediction">--</div>
+
+                    <p class="unit">Expected available bicycles</p>
+
+                    <div class="card-footer">
+                        <span id="stationStatus">Waiting for data</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CAPACITY ANALYSIS -->
+
+        <section id="allocation">
+
+            <div class="section-heading">
+                <h2>Capacity Utilization</h2>
+                <span class="section-tag">Resource Analysis</span>
+            </div>
+
+            <div class="analysis-container">
+
+                <div class="analysis-item">
+
+                    <div class="analysis-title">
+                        <span>🚲 Bicycle Rental Capacity</span>
+                        <strong id="bicycleUtilization">--%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill blue"
+                             id="bicycleProgress"></div>
+                    </div>
+
+                </div>
+
+                <div class="analysis-item">
+
+                    <div class="analysis-title">
+                        <span>🚗 Road Capacity</span>
+                        <strong id="trafficUtilization">--%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill purple"
+                             id="trafficProgress"></div>
+                    </div>
+
+                </div>
+
+                <div class="analysis-item">
+
+                    <div class="analysis-title">
+                        <span>🚇 Subway Capacity</span>
+                        <strong id="subwayUtilization">--%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill green"
+                             id="subwayProgress"></div>
+                    </div>
+
+                </div>
+
+                <div class="analysis-item">
+
+                    <div class="analysis-title">
+                        <span>🚴 Bike Station Occupancy</span>
+                        <strong id="stationUtilization">--%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill orange"
+                             id="stationProgress"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RECOMMENDATIONS -->
+
+        <section id="recommendations">
+
+            <div class="section-heading">
+                <h2>AI-Assisted Resource Recommendations</h2>
+                <span class="section-tag">Capacity Planning</span>
+            </div>
+
+            <div class="recommendation-grid">
+
+                <div class="recommendation-card">
+                    <h3>🚲 Bicycle Allocation</h3>
+                    <p id="bicycleRecommendation">
+                        Loading recommendation...
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>🚗 Traffic Management</h3>
+                    <p id="trafficRecommendation">
+                        Loading recommendation...
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>🚇 Subway Allocation</h3>
+                    <p id="subwayRecommendation">
+                        Loading recommendation...
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>🚴 Bike Station Rebalancing</h3>
+                    <p id="stationRecommendation">
+                        Loading recommendation...
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="errorMessage" class="error-message"
+             role="alert" hidden></div>
+
+        <!-- FOOTER -->
+
+        <footer>
+            <p>
+                Smart Mobility Demand Forecasting &
+                Capacity Allocation
+            </p>
+
+            <small>
+                Historical demonstration data from different cities.
+                Predictions are not live traffic conditions.
+                Capacity recommendations are illustrative.
+            </small>
+        </footer>
+
+    </main>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

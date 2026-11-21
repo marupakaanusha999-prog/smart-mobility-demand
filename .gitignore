@@ -1,0 +1,18 @@
+.env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.csv
+*.zip
+*.ipynb
+
+# Original model files
+model.pkl
+hourly_best_model.pkl
+traffic_model.pkl
+subway_model_tuned.pkl
+bike_station_model_tuned.pkl
+
+# Keep compressed models and preprocessing files
+!**/*_compressed.pkl
+!**/*_preprocessing.pkl
